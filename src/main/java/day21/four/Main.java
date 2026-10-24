@@ -10,6 +10,7 @@ public class Main {
         byte v = 1;
         float b = 7;
 
+        System.out.println();
 
         overload.over(x);
         overload.over(y);
@@ -19,6 +20,10 @@ public class Main {
 }
 
 class Overload {
+//FIXME - это тудушка
+    /**
+     * Это комментарий
+    * */
 
     void over(int x) {
         System.out.println(x);
