@@ -1,0 +1,13 @@
+package day29.alishev;
+
+public class Task2 {
+    public static void main(String[] args) {
+
+        int year = 1980;
+
+        while (year <= 2020) {
+            System.out.println("Олимпиада " + year + " года");
+            year += 4;
+        }
+    }
+}
