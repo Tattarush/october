@@ -17,21 +17,25 @@ public class Task1 {
             System.out.println("Введи размер массива");
             String str;
             int size = 0;
-            if ((str = reader.readLine()) != null) {
-                size = Integer.parseInt(str);
+            while (size <= 0){
+                if ((str = reader.readLine()) != null) {
+                    try {
+                        size = Integer.parseInt(str);
+                        if (size <= 0) {
+                            System.out.println("Введи число >= 1");
+                        }
+                    } catch (Exception e) {
+                        System.out.println("ВВеди число!");
+                    }
+                }
             }
+
 
             int[] array = new int[size];
             for (int i = 0; i < array.length; i++) {
                 array[i] = random.nextInt(10) + 1;
+                System.out.print(array[i] +" ");
                 sum += array[i];
-            }
-
-            for (int x : array) {
-                System.out.print(x+" ");
-            }
-
-            for (int i = 0; i < array.length; i++) {
                 if (array[i] > 8) {
                     countLE++;
                 }
@@ -40,11 +44,11 @@ public class Task1 {
                 }
                 if (array[i] % 2 == 0) {
                     countEven++;
-                }
-                if (array[i] % 2 != 0) {
+                }else {
                     countOdd++;
                 }
             }
+
 
             System.out.println("\nДлина массива - " + array.length);
             System.out.println("Количество чисел больше 8 - " + countLE);
